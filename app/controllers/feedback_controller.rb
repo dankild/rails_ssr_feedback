@@ -10,7 +10,7 @@ class FeedbackController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
     if @feedback.save
-      redirect_to(feedback_path)
+      redirect_to('/')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class FeedbackController < ApplicationController
     if @feedback
         @feedback.destroy
     end
-    back
+    redirect_to('/')
   end
 
   private
@@ -35,9 +35,5 @@ class FeedbackController < ApplicationController
 
   def find_feedback
     @feedback = Feedback.find(params[:id])
-  end
-
-  def back
-    redirect_back(fallback_location: feedback_path)
   end
 end

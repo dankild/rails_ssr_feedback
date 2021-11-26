@@ -1,0 +1,10 @@
+<br><h3 class="m-3">Create feedback:</h3><br>
+
+<%= form_with model: @feedbacks do |form| %>
+  <div class="row">
+    <%= form.text_field :name,  class:"col-sm-5 g-2 form-control", placeholder:'Your name'  %>
+    <%= form.text_field :email, class:"col-sm-5 g-2 form-control", placeholder:'Your e-mail'%>
+    <%= form.text_area  :body,  class:"col-12   g-2 form-control", placeholder:'Your feedback', rows:"4" %>
+    <%= form.submit value:'Send', class:"btn btn-primary col-12 col-sm-2 g-3"%>
+  </div>
+<% end %>

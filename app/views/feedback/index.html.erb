@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between m-4">
+    <h3 class="m-3">Feedbacks:</h3>
+    <%= link_to('Send new feedback', feedback_new_path, class:"btn btn-primary m-3")%>
+    
+</div>
+
+<% @feedbacks.each do |feedback| %>
+    <div class="card">
+        <h5 class="card-header d-flex justify-content-between">
+            <span class="m-2">Feedback №<%= feedback.id %></span>
+            <%= link_to('Delete', "/feedback/"+feedback.id.to_s+"/delete", class:"btn btn-danger")%>
+        </h5>
+        <div class="card-body">
+            <div class="row">
+                <p class="col">
+                    <span style='font-weight:600;'>Username:</span><br/><%= feedback.name %>
+                </p>
+                <p class="col">
+                    <span style='font-weight:600;'>Email:</span><br/><%= feedback.email %>
+                </p>
+            </div>
+            <div class="col">
+                <span style='font-weight:600;'>Feedback:</span><br/><%= feedback.body %>
+            </div>
+        </div>
+    </div>
+<% end %>

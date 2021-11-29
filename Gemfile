@@ -11,7 +11,7 @@ gem 'sass-rails', '>= 6'              # Use SCSS for stylesheets
 gem 'webpacker', '~> 5.0'             # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'turbolinks', '~> 5'              # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'jbuilder', '~> 2.7'              # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'rspec-rails', '~> 5.0.0'
+
 # gem 'redis', '~> 4.0'               # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'            # Use Active Model has_secure_password
 
@@ -35,6 +35,13 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'pry', '~> 0.13.1'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot_rails'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
 
 group :test do

@@ -1,6 +1,5 @@
 require "rails_helper"
 
-#describe 'how user creates a feedback >' do
 describe "Feedback CRUD >", type: :feature do
     it "allows user to access feedback creation page" do
         visit '/'
